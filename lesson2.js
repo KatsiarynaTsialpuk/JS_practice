@@ -22,6 +22,6 @@ const link = document.createElement('a');
 document.body.appendChild(link);
 link.textContent = 'Ссылка';
 link.addEventListener('click', function(e) {
-// e.preventDefault();
+e.preventDefault();
 console.log('Я кликнул на ссылку' +  location.href('https://loftschool.com'));
 });
