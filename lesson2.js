@@ -23,5 +23,19 @@ document.body.appendChild(link);
 link.textContent = 'Ссылка';
 link.addEventListener('click', function(e) {
 e.preventDefault();
-console.log('Я кликнул на ссылку' +  location.href('https://loftschool.com'));
+console.log('Я кликнул на ссылку ' +  link.setAttribute('href', 'https://loftschool.com'));
+});
+
+//задание 6
+const btn = document.createElement('button');
+const input = document.createElement('input');
+document.body.appendChild(btn);
+document.body.appendChild(input);
+
+input.addEventListener('keydown', function(e) {
+    console.log(e.key);
+})
+
+btn.textContent = 'Btn';
+btn.addEventListener('click', function() {
 });
