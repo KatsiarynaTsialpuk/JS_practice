@@ -32,10 +32,41 @@ const input = document.createElement('input');
 document.body.appendChild(btn);
 document.body.appendChild(input);
 
-input.addEventListener('keydown', function(e) {
-    console.log(e.key);
-})
+input.classList.add('Form')
 
 btn.textContent = 'Btn';
-btn.addEventListener('click', function() {
+btn.addEventListener('click', function(e) {
+    e.preventDefault();
+
+console.log(input.value);
+});
+
+//задание 7
+const left = document.querySelector("#left");
+const right = document.querySelector("#right");
+const items = document.querySelector("#items");
+const computed = getComputedStyle(items);
+
+right.addEventListener("click", function(e) {
+  e.preventDefault();
+  let curentRight = parseInt(computed.right);
+  if (!curentRight) {
+      curentRight = 0;
+  }
+
+  if (curentRight < 500) {
+      items.style.right = curentRight + 100 + 'px';
+  }
+});
+
+left.addEventListener("click", function(e) {
+  e.preventDefault();
+  let curentRight = parseInt(computed.right);
+  if (!curentRight) {
+      curentRight = 0;
+  }
+
+  if (curentRight > 0) {
+      items.style.right = curentRight - 100 + 'px';
+  }
 });
